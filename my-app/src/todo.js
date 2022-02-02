@@ -9,12 +9,18 @@ class Todo extends Component {
     };
   }
 
+  onInput = (e) => {
+    this.setState({
+      name: e.target.value,
+    });
+  };
+
   render() {
     const { todos } = this.state;
 
     return (
       <div>
-        <input type="text" />
+        <input type="text" onInput={this.onInput} />
         <button>登録</button>
         <ul>
           {todos.map((todo, index) => (
